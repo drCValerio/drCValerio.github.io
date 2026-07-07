@@ -3,34 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página de Presentación</title>
+    <title>Mi Portafolio - [Tu Nombre]</title>
+    
+    <!-- Importando Tailwind CSS para los estilos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Importando FontAwesome para los íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        base: '#f8fafc',
+                        card: '#ffffff',
+                        accent: '#3b82f6',
+                        dark: '#0f172a'
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
+        /* Estilos adicionales para animaciones suaves */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f9;
-            color: #333;
-            margin-top: 50px;
+            font-family: 'Inter', sans-serif;
         }
-        .contenedor {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
-            max-width: 600px;
-            margin: auto;
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
         }
-        h1 { color: #0056b3; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
-<body>
+<body class="bg-base text-slate-600 min-h-screen antialiased selection:bg-accent selection:text-white">
 
-    <div class="contenedor">
-        <h1>¡Hola! Soy [Tu Nombre]</h1>
-        <p>Bienvenido a mi página de presentación.</p>
-        <p>Soy un desarrollador/diseñador/estudiante apasionado por la tecnología.</p>
-        <a href="https://github.com/tu-usuario" target="_blank">Visita mi GitHub</a>
-    </div>
+    <!-- Contenedor principal -->
+    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20 fade-in">
+        
+        <!-- SECCIÓN 1: Presentación (Hero) -->
+        <header class="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12 mb-20">
+            <div class="flex-1 text-center md:text-left">
+                <h2 class="text-accent font-semibold tracking-wide uppercase text-sm mb-2">¡Hola, mundo! Soy</h2>
+                <!-- Cambia tu nombre aquí -->
+                <h1 class="text-4xl md:text-6xl font-bold text-dark mb-4 tracking-tight">
+                    [Tu Nombre]
+                </h1>
+                <!-- Cambia tu profesión o rol aquí -->
+                <h3 class="text-xl md:text-2xl text-slate-600 mb-6">
+                    Desarrollador Web / Estudiante
+                </h3>
+                <p class="text-slate-600 leading-relaxed mb-8 max-w-2xl">
+                    Soy un apasionado por la tecnología y la creación de soluciones digitales. Me encanta aprender nuevas herramientas y construir proyectos que aporten valor. Bienvenido a mi espacio personal en GitHub.
+                </p>
+                
+                <!-- Redes Sociales y Enlaces -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="https://github.com/tu-usuario" target="_blank" class="flex items-center gap-2 bg-dark text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-slate-800 transition-colors shadow-lg">
+                        <i class="fab fa-github text-xl"></i> GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="flex items-center gap-2 bg-card text-slate-700 border border-slate-200 px-5 py-2.5 rounded-lg font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all shadow-sm">
+                        <i class="fab fa-linkedin text-xl text-blue-600"></i> LinkedIn
+                    </a>
+                    <a href="mailto:tu-correo@email.com" class="flex items-center gap-2 bg-card text-slate-700 border border-slate-200 px-5 py-2.5 rounded-lg font-semibold hover:border-slate-300 hover:bg-slate-50 transition-all shadow-sm">
+                        <i class="fas fa-envelope text-xl text-red-500"></i> Contacto
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Foto de perfil -->
+            <div class="shrink-0 relative">
+                <div class="absolute inset-0 bg-gradient-to-tr from-accent to-purple-400 rounded-full blur opacity-70"></div>
+                <!-- Cambia el enlace de la imagen por una tuya, o deja el placeholder por ahora -->
+                <img src="https://placehold.co/250x250/ffffff/0f172a?text=Tu+Foto" alt="Foto de perfil" class="relative w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-4 border-white shadow-2xl z-10">
+            </div>
+        </header>
 
+        <!-- SECCIÓN 2: Habilidades (Skills) -->
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-dark mb-6 border-b border-slate-200 pb-2">
+                <i class="fas fa-code text-accent mr-2"></i> Mis Habilidades
+            </h2>
+            <div class="flex flex-wrap gap-3">
+                <!-- Puedes agregar o quitar habilidades de esta lista -->
+                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">HTML5</span>
+                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">CSS3</span>
+                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">JavaScript</span>
+                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Python</span>
+                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Git & GitHub</span>
+                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Tailwind CSS</span>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: Proyectos -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-dark mb-6 border-b border-slate-200 pb-2">
+                <i class="fas fa-folder-open text-accent mr-2"></i> Proyectos Destacados
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Proyecto 1 -->
+                <div class="bg-card rounded-xl p-6 border border-slate-200 hover:border-accent hover:-translate-y-1 transition-all duration-300 shadow-md group">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="far fa-folder text-3xl text-accent group-hover:text-dark transition-colors"></i>
+                        <a href="#" class="text-slate-400 hover:text-dark transition-colors"><i class="fab fa-github text-xl"></i></a>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Nombre del Proyecto 1</h3>
+                    <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                        Una breve descripción de lo que hace este proyecto. Qué problema resuelve o qué tecnologías utilizaste para construirlo.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs text-accent bg-accent/10 px-2 py-1 rounded">React</span>
+                        <span class="text-xs text-accent bg-accent/10 px-2 py-1 rounded">Node.js</span>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 -->
+                <div class="bg-card rounded-xl p-6 border border-slate-200 hover:border-accent hover:-translate-y-1 transition-all duration-300 shadow-md group">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="far fa-folder text-3xl text-accent group-hover:text-dark transition-colors"></i>
+                        <a href="#" class="text-slate-400 hover:text-dark transition-colors"><i class="fas fa-external-link-alt text-lg"></i></a>
+                    </div>
+                    <h3 class="text-xl font-bold text-dark mb-2">Nombre del Proyecto 2</h3>
+                    <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+                        Otra descripción para tu segundo proyecto. Explica brevemente por qué es interesante o qué aprendiste haciéndolo.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mt-auto">
+                        <span class="text-xs text-accent bg-accent/10 px-2 py-1 rounded">HTML</span>
+                        <span class="text-xs text-accent bg-accent/10 px-2 py-1 rounded">CSS</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PIE DE PÁGINA -->
+        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
+            <p>Diseñado y construido con <i class="fas fa-heart text-red-500 mx-1"></i> por [Tu Nombre]</p>
+            <p class="mt-2">&copy; <span id="year"></span> Todos los derechos reservados.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // Script simple para actualizar el año en el pie de página automáticamente
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
