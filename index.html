@@ -7,6 +7,7 @@
     
     <!-- Ícono de la pestaña (Favicon) -->
     <link rel="icon" type="image/png" href="Img/Fav1.png">
+    
     <!-- Importando Tailwind CSS para los estilos -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -66,12 +67,15 @@
 </head>
 <body class="bg-base text-slate-600 min-h-screen antialiased selection:bg-accent selection:text-white">
 
-    <!-- BARRA DE NAVEGACIÓN (Menú Fijo) -->
+    <!-- ==========================================
+         BARRA DE NAVEGACIÓN (Menú Fijo)
+    =========================================== -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
-        <div class="max-w-4xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div class="max-w-4xl mx-auto px-4 md:px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-3 md:gap-4">
             <div class="font-bold text-dark text-lg flex items-center">
                 <i class="fas fa-flask text-accent mr-2"></i> CValerio
             </div>
+            <!-- Si agregas más secciones, añade enlaces aquí -->
             <ul class="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-semibold text-slate-600">
                 <li><a href="#perfil" class="hover:text-accent transition-colors">Perfil</a></li>
                 <li><a href="#especialidades" class="hover:text-accent transition-colors">Especialidades</a></li>
@@ -80,39 +84,41 @@
         </div>
     </nav>
 
-    <!-- SECCIÓN DE BANNER (Imágenes en movimiento) -->
+    <!-- ==========================================
+         BANNER ANIMADO (Carrusel)
+    =========================================== -->
     <div class="w-full h-48 md:h-64 relative overflow-hidden border-b border-slate-200 bg-slate-900">
-        <!-- Carrusel animado -->
         <div class="absolute inset-0 animate-slider">
             <!-- Primer set de imágenes -->
             <div class="slide-track">
                 <img src="Img/Bann1.png" alt="Laboratorio" class="slide-img">
                 <img src="Img/Bann2.png" alt="Investigación" class="slide-img">
                 <img src="Img/Bann3.png" alt="Química" class="slide-img">
-            <!-- Segundo set de imágenes (Duplicado exacto para crear la ilusión de bucle infinito) -->
             </div>
+            <!-- Segundo set de imágenes (Duplicado exacto) -->
             <div class="slide-track">
                 <img src="Img/Bann1.png" alt="Laboratorio" class="slide-img">
                 <img src="Img/Bann2.png" alt="Investigación" class="slide-img">
                 <img src="Img/Bann3.png" alt="Química" class="slide-img">
             </div>
         </div>
-        <!-- Filtros superpuestos para el banner -->
+        <!-- Filtros superpuestos -->
         <div class="absolute inset-0 bg-slate-900/40"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-base"></div>
     </div>
 
-    <!-- Contenedor principal (Subido ligeramente para solapar el banner) -->
-    <main class="max-w-4xl mx-auto px-6 pb-12 md:pb-20 fade-in relative -mt-24 md:-mt-32 z-10">
+    <!-- Contenedor Principal Central -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 pb-12 md:pb-20 fade-in relative -mt-24 md:-mt-32 z-10">
         
-        <!-- SECCIÓN 1: Presentación (Hero) -->
-        <!-- Envuelta en una tarjeta blanca para contrastar con el banner de fondo -->
-        <header id="perfil" class="scroll-mt-24 mb-20 bg-card p-8 md:p-12 rounded-2xl shadow-md border border-slate-100 text-center md:text-left">
+        <!-- ==========================================
+             SECCIÓN 1: PERFIL (Hero)
+        =========================================== -->
+        <header id="perfil" class="scroll-mt-24 mb-16 md:mb-20 bg-card p-6 md:p-12 rounded-2xl shadow-md border border-slate-100 text-center md:text-left">
             <h2 class="text-accent font-semibold tracking-wide uppercase text-sm mb-2">Perfil Académico y Profesional</h2>
-            <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4 tracking-tight">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4 tracking-tight">
                 Carlos Gonzalez Valerio
             </h1>
-            <h3 class="text-xl md:text-2xl text-slate-600 mb-6">
+            <h3 class="text-lg sm:text-xl md:text-2xl text-slate-600 mb-6">
                 Doctor en Ingeniería Química | Profesor
             </h3>
             <p class="text-slate-600 leading-relaxed max-w-3xl mx-auto md:mx-0">
@@ -120,35 +126,39 @@
             </p>
         </header>
 
-        <!-- SECCIÓN 2: Áreas de Especialidad y Habilidades -->
-        <section id="especialidades" class="scroll-mt-24 mb-20">
-            <h2 class="text-2xl font-bold text-dark mb-6 border-b border-slate-200 pb-2">
+        <!-- ==========================================
+             SECCIÓN 2: ÁREAS DE ESPECIALIDAD
+        =========================================== -->
+        <section id="especialidades" class="scroll-mt-24 mb-16 md:mb-20">
+            <h2 class="text-xl md:text-2xl font-bold text-dark mb-6 border-b border-slate-200 pb-2">
                 <i class="fas fa-microscope text-accent mr-2"></i> Áreas de Especialidad
             </h2>
-            <div class="flex flex-wrap gap-3">
-                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Adsorción</span>
-                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Python / MATLAB</span>
-                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Modelado Matemático</span>
-                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Diseño de Reactores</span>
-                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Termodinámica Aplicada</span>
-                <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Análisis de Datos (Data Science)</span>
+            <div class="flex flex-wrap gap-2 md:gap-3">
+                <span class="bg-card px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Adsorción</span>
+                <span class="bg-card px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Python / MATLAB</span>
+                <span class="bg-card px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Modelado Matemático</span>
+                <span class="bg-card px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Diseño de Reactores</span>
+                <span class="bg-card px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Termodinámica Aplicada</span>
+                <span class="bg-card px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Análisis de Datos (Data Science)</span>
             </div>
         </section>
 
-        <!-- SECCIÓN 3: Artículos y Publicaciones -->
-        <section id="articulos" class="scroll-mt-24 mb-20">
-            <h2 class="text-2xl font-bold text-dark mb-6 border-b border-slate-200 pb-2">
+        <!-- ==========================================
+             SECCIÓN 3: ARTÍCULOS PUBLICADOS
+        =========================================== -->
+        <section id="articulos" class="scroll-mt-24 mb-16 md:mb-20">
+            <h2 class="text-xl md:text-2xl font-bold text-dark mb-6 border-b border-slate-200 pb-2">
                 <i class="fas fa-file-alt text-accent mr-2"></i> Artículos Publicados
             </h2>
             
             <div class="flex flex-col gap-4">
-                <!-- Artículo 1 -->
-                <div class="bg-card rounded-xl p-6 border border-slate-200 hover:border-accent transition-all duration-300 shadow-md">
+                <!-- Tarjeta de Artículo -->
+                <div class="bg-card rounded-xl p-5 md:p-6 border border-slate-200 hover:border-accent transition-all duration-300 shadow-md">
                     <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                         <div>
-                            <h3 class="text-lg font-bold text-dark mb-1">Color Compounds Removal from Tequila Vinasses Using Silica Gel Adsorbents Functionalized with Thiol Moieties: Equilibrium and Kinetics Studies</h3>
-                            <p class="text-slate-500 text-sm mb-3">Publicado en: <span class="font-semibold text-slate-700">Molecules</span> &bull; Año: 2024</p>
-                            <p class="text-slate-600 text-sm mb-4">
+                            <h3 class="text-base md:text-lg font-bold text-dark mb-1">Color Compounds Removal from Tequila Vinasses Using Silica Gel Adsorbents Functionalized with Thiol Moieties: Equilibrium and Kinetics Studies</h3>
+                            <p class="text-slate-500 text-xs md:text-sm mb-3">Publicado en: <span class="font-semibold text-slate-700">Molecules</span> &bull; Año: 2024</p>
+                            <p class="text-slate-600 text-sm mb-4 text-justify md:text-left">
                                  Tequila vinasses are organic wastes generated during ethanol fermentation at elevated temperatures (≥90 °C) and pH ≤ 4.0, making them hazardous to the environment. This paper describes a new, simplified UV–vis spectroscopy-based procedure for monitoring the adsorption of color compounds in tequila vinasses onto silica-based adsorbents, along with an optimized synthesis method to produce the most efficient sol–gel synthesized thiol-functionalized adsorbent. Under optimized conditions, the uptake capacity of this adsorbent reaches 0.8 g g−1 in 90 min. Experimental results demonstrate that the adsorbent has a specific affinity for melanoidin-type molecules. The adsorbent demonstrates excellent thermal stability (~316 °C). The results of this work indicate that the adsorbent possesses potential in the treatment of tequila vinasses from wastewater discharges.
                             </p>
                             <div class="flex flex-wrap gap-2">
@@ -156,7 +166,8 @@
                                 <span class="text-xs text-accent bg-accent/10 px-2 py-1 rounded">Peer-Reviewed</span>
                             </div>
                         </div>
-                        <a href="https://www.mdpi.com/1420-3049/29/24/5910" target="_blank" class="shrink-0 inline-flex items-center justify-center gap-2 bg-base border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold hover:border-accent hover:text-accent transition-colors">
+                        <!-- Botón leer artículo -->
+                        <a href="https://www.mdpi.com/1420-3049/29/24/5910" target="_blank" class="w-full md:w-auto shrink-0 inline-flex items-center justify-center gap-2 bg-base border border-slate-200 text-slate-700 px-4 py-2 md:py-3 rounded-lg text-sm font-semibold hover:border-accent hover:text-accent transition-colors">
                             <i class="fas fa-external-link-alt"></i> Leer Artículo
                         </a>
                     </div>
@@ -164,9 +175,68 @@
             </div>
         </section>
 
-        <!-- PIE DE PÁGINA -->
-        <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
-            <p>Diseñado <i class="fas fa-flask text-accent mx-1"></i> por  CValerio</p>
+        <!-- ==========================================
+             SECCIÓN 4: FORMACIÓN ACADÉMICA (NUEVO)
+        =========================================== -->
+        <section id="educacion" class="scroll-mt-24 mb-16 md:mb-20">
+            <h2 class="text-xl md:text-2xl font-bold text-dark mb-6 border-b border-slate-200 pb-2">
+                <i class="fas fa-graduation-cap text-accent mr-2"></i> Formación Académica
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Doctorado -->
+                <div class="bg-card rounded-xl p-5 md:p-6 border border-slate-200 shadow-sm relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-accent opacity-70 group-hover:opacity-100 transition-opacity"></div>
+                    <h3 class="text-lg font-bold text-dark mb-1">Doctorado en Ingeniería Química</h3>
+                    <p class="text-slate-500 text-sm mb-2">Nombre de la Universidad &bull; Año - Año</p>
+                    <p class="text-slate-600 text-sm">
+                        <span class="font-semibold text-slate-700">Tesis:</span> [Título de tu tesis de doctorado].
+                    </p>
+                </div>
+
+                <!-- Licenciatura / Maestría -->
+                <div class="bg-card rounded-xl p-5 md:p-6 border border-slate-200 shadow-sm relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-slate-300 group-hover:bg-accent transition-colors"></div>
+                    <h3 class="text-lg font-bold text-dark mb-1">Licenciatura / Ingeniería Química</h3>
+                    <p class="text-slate-500 text-sm mb-2">Nombre de la Universidad &bull; Año - Año</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             SECCIÓN 5: CONTACTO Y REDES ACADÉMICAS (NUEVO)
+        =========================================== -->
+        <section id="contacto" class="scroll-mt-24 mb-16 md:mb-20 bg-slate-900 rounded-2xl p-6 md:p-10 text-center shadow-lg">
+            <h2 class="text-xl md:text-2xl font-bold text-white mb-2">¿Colaboramos en investigación?</h2>
+            <p class="text-slate-300 mb-8 max-w-2xl mx-auto text-sm md:text-base">
+                Puedes contactarme por correo electrónico o consultar mis perfiles en las principales bases de datos académicas.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <!-- Botón de Correo -->
+                <a href="mailto:tu.correo@universidad.edu" class="inline-flex items-center gap-2 bg-accent hover:bg-teal-500 text-white px-5 py-3 rounded-lg text-sm font-semibold transition-colors shadow-md">
+                    <i class="fas fa-envelope"></i> Enviar Correo
+                </a>
+                <!-- Google Scholar -->
+                <a href="#" target="_blank" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-5 py-3 rounded-lg text-sm font-semibold transition-colors">
+                    <i class="fas fa-graduation-cap"></i> Google Scholar
+                </a>
+                <!-- ResearchGate / ORCID (Sustituye el enlace en el href) -->
+                <a href="#" target="_blank" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-5 py-3 rounded-lg text-sm font-semibold transition-colors">
+                    <i class="fab fa-researchgate"></i> ResearchGate
+                </a>
+                <!-- ORCID -->
+                <a href="#" target="_blank" class="inline-flex items-center gap-2 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 px-5 py-3 rounded-lg text-sm font-semibold transition-colors">
+                    <i class="fab fa-orcid"></i> ORCID
+                </a>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             PIE DE PÁGINA
+        =========================================== -->
+        <footer class="mt-16 md:mt-20 pt-8 border-t border-slate-200 text-center text-slate-500 text-xs md:text-sm">
+            <p>Diseñado <i class="fas fa-flask text-accent mx-1"></i> por CValerio</p>
             <p class="mt-2">&copy; <span id="year"></span> Todos los derechos reservados.</p>
         </footer>
 
