@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Carlos Gonzalez-Valerio - Portafolio e Investigación</title>
+    <title>Carlos Gonzalez-Valerio - Portafolio e Investigación</title>
+    
+    <!-- Ícono de la pestaña (Favicon) -->
+    link rel="icon" type="image/png" href="Img/HexSum.png">
     
     <!-- Importando Tailwind CSS para los estilos -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,21 +43,48 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        
+        /* Patrón de puntos para el banner (creado con CSS) */
+        .bg-pattern {
+            background-image: radial-gradient(rgba(13, 148, 136, 0.15) 2px, transparent 2px);
+            background-size: 24px 24px;
+        }
     </style>
 </head>
 <body class="bg-base text-slate-600 min-h-screen antialiased selection:bg-accent selection:text-white">
 
-    <!-- Contenedor principal -->
-    <main class="max-w-4xl mx-auto px-6 py-12 md:py-20 fade-in">
+    <!-- BARRA DE NAVEGACIÓN (Menú Fijo) -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="font-bold text-dark text-lg flex items-center">
+                <i class="fas fa-flask text-accent mr-2"></i> CValerio
+            </div>
+            <ul class="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-semibold text-slate-600">
+                <li><a href="#perfil" class="hover:text-accent transition-colors">Perfil</a></li>
+                <li><a href="#especialidades" class="hover:text-accent transition-colors">Especialidades</a></li>
+                <li><a href="#articulos" class="hover:text-accent transition-colors">Artículos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN DE BANNER (Fondo decorativo en la parte superior) -->
+    <div class="w-full h-48 md:h-64 bg-slate-50 relative overflow-hidden border-b border-slate-200">
+        <!-- Capa del patrón de puntos -->
+        <div class="absolute inset-0 bg-pattern"></div>
+        <!-- Un sutil degradado superpuesto para darle profundidad -->
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-base"></div>
+    </div>
+
+    <!-- Contenedor principal (Subido ligeramente para solapar el banner) -->
+    <main class="max-w-4xl mx-auto px-6 pb-12 md:pb-20 fade-in relative -mt-24 md:-mt-32 z-10">
         
         <!-- SECCIÓN 1: Presentación (Hero) -->
-        <header class="mb-20 text-center md:text-left">
+        <!-- Envuelta en una tarjeta blanca para contrastar con el banner de fondo -->
+        <header id="perfil" class="scroll-mt-24 mb-20 bg-card p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100 text-center md:text-left">
             <h2 class="text-accent font-semibold tracking-wide uppercase text-sm mb-2">Perfil Académico y Profesional</h2>
-            <!-- Cambia tu nombre aquí -->
             <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4 tracking-tight">
                 Dr. Carlos Gonzalez Valerio
             </h1>
-            <!-- Cambia tu profesión o rol aquí -->
             <h3 class="text-xl md:text-2xl text-slate-600 mb-6">
                 Doctor en Ingeniería Química | Profesor
             </h3>
@@ -64,12 +94,11 @@
         </header>
 
         <!-- SECCIÓN 2: Áreas de Especialidad y Habilidades -->
-        <section class="mb-20">
+        <section id="especialidades" class="scroll-mt-24 mb-20">
             <h2 class="text-2xl font-bold text-dark mb-6 border-b border-slate-200 pb-2">
                 <i class="fas fa-microscope text-accent mr-2"></i> Áreas de Especialidad
             </h2>
             <div class="flex flex-wrap gap-3">
-                <!-- Puedes modificar estas habilidades según tu experiencia real -->
                 <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Adsorción</span>
                 <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Python / MATLAB</span>
                 <span class="bg-card px-4 py-2 rounded-full text-sm font-medium border border-slate-200 text-slate-700 hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm">Modelado Matemático</span>
@@ -80,7 +109,7 @@
         </section>
 
         <!-- SECCIÓN 3: Artículos y Publicaciones -->
-        <section class="mb-20">
+        <section id="articulos" class="scroll-mt-24 mb-20">
             <h2 class="text-2xl font-bold text-dark mb-6 border-b border-slate-200 pb-2">
                 <i class="fas fa-file-alt text-accent mr-2"></i> Artículos Publicados
             </h2>
@@ -100,14 +129,13 @@
                                 <span class="text-xs text-accent bg-accent/10 px-2 py-1 rounded">Peer-Reviewed</span>
                             </div>
                         </div>
-                        <a href=https://www.mdpi.com/1420-3049/29/24/5910 target="_blank" class="shrink-0 inline-flex items-center justify-center gap-2 bg-base border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold hover:border-accent hover:text-accent transition-colors">
+                        <a href="https://www.mdpi.com/1420-3049/29/24/5910" target="_blank" class="shrink-0 inline-flex items-center justify-center gap-2 bg-base border border-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-semibold hover:border-accent hover:text-accent transition-colors">
                             <i class="fas fa-external-link-alt"></i> Leer Artículo
                         </a>
                     </div>
                 </div>
             </div>
         </section>
-
 
         <!-- PIE DE PÁGINA -->
         <footer class="mt-20 pt-8 border-t border-slate-200 text-center text-slate-500 text-sm">
