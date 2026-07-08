@@ -6,8 +6,7 @@
     <title>Carlos Gonzalez-Valerio - Portafolio e Investigación</title>
     
     <!-- Ícono de la pestaña (Favicon) -->
-    link rel="icon" type="image/png" href="Img/HexSum.png">
-    
+    <link rel="icon" type="image/png" href="Img/HexSum.png">
     <!-- Importando Tailwind CSS para los estilos -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -44,10 +43,24 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* Patrón de puntos para el banner (creado con CSS) */
-        .bg-pattern {
-            background-image: radial-gradient(rgba(13, 148, 136, 0.15) 2px, transparent 2px);
-            background-size: 24px 24px;
+        /* Animación para el banner de imágenes en movimiento */
+        @keyframes scrollBanner {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-slider {
+            animation: scrollBanner 30s linear infinite;
+            display: flex;
+            width: 200%; /* Doble ancho para el bucle infinito */
+        }
+        .slide-track {
+            display: flex;
+            width: 50%;
+        }
+        .slide-img {
+            width: 33.333%; /* 3 imágenes por set. Cambiar este % si pones más o menos fotos */
+            height: 100%;
+            object-fit: cover;
         }
     </style>
 </head>
@@ -57,7 +70,7 @@
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-4xl mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="font-bold text-dark text-lg flex items-center">
-                <i class="fas fa-flask text-accent mr-2"></i> CValerio
+                <i class="fas fa-flask text-accent mr-2"></i> Dr. C. Gonzalez
             </div>
             <ul class="flex flex-wrap justify-center gap-4 sm:gap-8 text-sm font-semibold text-slate-600">
                 <li><a href="#perfil" class="hover:text-accent transition-colors">Perfil</a></li>
@@ -67,11 +80,25 @@
         </div>
     </nav>
 
-    <!-- SECCIÓN DE BANNER (Fondo decorativo en la parte superior) -->
-    <div class="w-full h-48 md:h-64 bg-slate-50 relative overflow-hidden border-b border-slate-200">
-        <!-- Capa del patrón de puntos -->
-        <div class="absolute inset-0 bg-pattern"></div>
-        <!-- Un sutil degradado superpuesto para darle profundidad -->
+    <!-- SECCIÓN DE BANNER (Imágenes en movimiento) -->
+    <div class="w-full h-48 md:h-64 relative overflow-hidden border-b border-slate-200 bg-slate-900">
+        <!-- Carrusel animado -->
+        <div class="absolute inset-0 animate-slider">
+            <!-- Primer set de imágenes -->
+            <div class="slide-track">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" alt="Laboratorio" class="slide-img">
+                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80" alt="Investigación" class="slide-img">
+                <img src="https://images.unsplash.com/photo-1614935151651-0bea6508ad6b?auto=format&fit=crop&w=800&q=80" alt="Química" class="slide-img">
+            </div>
+            <!-- Segundo set de imágenes (Duplicado exacto para crear la ilusión de bucle infinito) -->
+            <div class="slide-track">
+                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=800&q=80" alt="Laboratorio" class="slide-img">
+                <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?auto=format&fit=crop&w=800&q=80" alt="Investigación" class="slide-img">
+                <img src="https://images.unsplash.com/photo-1614935151651-0bea6508ad6b?auto=format&fit=crop&w=800&q=80" alt="Química" class="slide-img">
+            </div>
+        </div>
+        <!-- Filtros superpuestos para el banner -->
+        <div class="absolute inset-0 bg-slate-900/40"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-base"></div>
     </div>
 
@@ -80,7 +107,7 @@
         
         <!-- SECCIÓN 1: Presentación (Hero) -->
         <!-- Envuelta en una tarjeta blanca para contrastar con el banner de fondo -->
-        <header id="perfil" class="scroll-mt-24 mb-20 bg-card p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100 text-center md:text-left">
+        <header id="perfil" class="scroll-mt-24 mb-20 bg-card p-8 md:p-12 rounded-2xl shadow-md border border-slate-100 text-center md:text-left">
             <h2 class="text-accent font-semibold tracking-wide uppercase text-sm mb-2">Perfil Académico y Profesional</h2>
             <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4 tracking-tight">
                 Dr. Carlos Gonzalez Valerio
